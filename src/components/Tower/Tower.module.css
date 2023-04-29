@@ -1,0 +1,8 @@
+.tower {
+    position: relative;
+    transition: background-color 0.3s ease;
+    width: 30%;
+    min-height: 300px;
+    border: 1px solid;
+  }
+  
