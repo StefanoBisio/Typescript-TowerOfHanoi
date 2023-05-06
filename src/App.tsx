@@ -12,6 +12,8 @@ import styles from './App.module.css';
 const App: React.FC = () => {
   const [gameState, setGameState] = useState(initGame(6));
   const [moveCount, setMoveCount] = useState(0);
+  const [showRules, setShowRules] = useState(false);
+
 
   const handleResetGame = (numDisks: number) => {
     setGameState(initGame(numDisks));
@@ -38,18 +40,31 @@ const App: React.FC = () => {
     }
   }, [gameState, moveCount]);
 
-
   return (
     <DndProvider backend={HTML5Backend}>
+
       <div className={styles.app}>
         <h1>Tower of Hanoi</h1>
+
+        <button className={styles.rulesButton} onClick={() => setShowRules(!showRules)}>Rules</button>
+        {showRules && (
+          <ul>
+            <li>Only one disk can be moved at a time.</li>
+            <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.</li>
+            <li>No larger disk may be placed on top of a smaller disk.</li>
+          </ul>
+        )}
+
         <div className={styles.gameArea}>
           {gameState.map((tower, index) => (
             <Tower key={index} towerIndex={index} disks={tower} onDiskDrop={handleDiskDrop} />
           ))}
         </div>
-        <MovesCounter moves={moveCount} />
-        <GameControls onResetGame={handleResetGame} />
+
+        <div className={styles.interface}>
+          <MovesCounter moves={moveCount} />
+          <GameControls onResetGame={handleResetGame} />
+        </div>
       </div>
     </DndProvider>
   );
