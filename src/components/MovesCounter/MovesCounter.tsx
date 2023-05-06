@@ -9,7 +9,7 @@ interface MovesCounterProps {
 
 export const MovesCounter: React.FC<MovesCounterProps> = ({ moves }) => {
   return (
-    <div className="movesCounter">
+    <div>
       <p>
         Moves: <span>{moves}</span>
       </p>
