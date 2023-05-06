@@ -1,7 +1,6 @@
 // components/MovesCounter/MovesCounter.tsx
 
 import React from 'react';
-import './MovesCounter.module.css';
 
 interface MovesCounterProps {
   moves: number;
