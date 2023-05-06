@@ -1,9 +1,5 @@
 .disk {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 5px;
-  user-drag: none;
-  user-select: none;
+  border-radius: 10px;
+  height: 1.8rem;
+  border: 1px solid black;
 }
