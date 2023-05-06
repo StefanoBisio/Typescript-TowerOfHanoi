@@ -1,4 +1,8 @@
 .tower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
     position: relative;
     transition: background-color 0.3s ease;
     width: 30%;
