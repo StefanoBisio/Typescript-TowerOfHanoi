@@ -7,7 +7,7 @@ export const initGame = (numDisks: number): number[][] => {
       // Create an array of length numDisks to represent the disks on the first tower
       const firstTower = Array.from({ length: numDisks }, (_, index) => {
         // Initialize the disks in descending order
-        return numDisks + index;
+        return numDisks - index;
       });
       return firstTower;
     } else {
@@ -19,14 +19,11 @@ export const initGame = (numDisks: number): number[][] => {
 };
 
 
-// Define a function to move a disk from one tower to another
-/**
- * Moves a disk from one tower to another.
- * @param gameState The current state of the game represented as a 2D array.
- * @param source The index of the source tower.
- * @param target The index of the target tower.
- * @returns The new game state after moving the disk.
- */
+/* Moves a disk from one tower to another.
+ * gameState is the current state of the game represented as a 2D array.
+ * source is the index of the source tower.
+ * target is the index of the target tower.
+ * returns the new game state after moving the disk. */
 export const moveDisk = (
   gameState: number[][],
   source: number,
