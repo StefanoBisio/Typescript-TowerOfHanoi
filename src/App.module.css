@@ -21,9 +21,15 @@
     }
 
 }
+
 .app a {
     color: inherit;
 }
+
+.app li {
+    margin-bottom: 0.5rem;
+}
+
 .rulesButton {
     background-color: white;
     border: 1px solid #a5a5a5;
