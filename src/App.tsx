@@ -19,22 +19,16 @@ const App: React.FC = () => {
   };
 
   const handleDiskDrop = (source: number, target: number) => {
-    // Use a functional update to ensure we're working with the most recent state
-
     // React may sometimes batch multiple state updates together for better performance, which can result in state updates using stale or outdated state values when computed based on the current state. By using a functional update, you ensure that the state update always uses the most recent state, as React will apply the functional update in the correct order, even when batching multiple updates together.
     setGameState((prevState) => {
-      console.log("Before moveDisk:", prevState);
-
       // Apply the moveDisk function to the prevState
       const newGameState = moveDisk(prevState, source, target);
-      console.log("After moveDisk:", newGameState);
-
-      // Return the newGameState as the updated state value
+      // Only increment moveCount if the move is legal
+      if (newGameState !== prevState) {
+        setMoveCount((prevMoveCount) => prevMoveCount + 1);
+      }
       return newGameState;
     });
-
-    // Use a separate functional update for moveCount to ensure correct counting
-    setMoveCount((prevMoveCount) => prevMoveCount + 1);
   };
 
   // Add a useEffect hook to check if the game is over when gameState or moveCount change
