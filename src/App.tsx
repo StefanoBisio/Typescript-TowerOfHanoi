@@ -43,27 +43,30 @@ const App: React.FC = () => {
   return (
     <DndProvider backend={HTML5Backend}>
 
-      <div className={styles.app}>
-        <h1>Tower of Hanoi</h1>
+      <div className={styles.appContainer}>
+        <div className={styles.app}>
+          <h1>Tower of Hanoi</h1>
+          <p>Tech used: React, <a href='https://react-dnd.github.io/react-dnd/about' target='_blank'>React-dnd</a>, Typescript</p>
 
-        <button className={styles.rulesButton} onClick={() => setShowRules(!showRules)}>Rules</button>
-        {showRules && (
-          <ul>
-            <li>Only one disk can be moved at a time.</li>
-            <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.</li>
-            <li>No larger disk may be placed on top of a smaller disk.</li>
-          </ul>
-        )}
+          <button className={styles.rulesButton} onClick={() => setShowRules(!showRules)}>Rules</button>
+          {showRules && (
+            <ul>
+              <li>Only one disk can be moved at a time.</li>
+              <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.</li>
+              <li>No larger disk may be placed on top of a smaller disk.</li>
+            </ul>
+          )}
 
-        <div className={styles.gameArea}>
-          {gameState.map((tower, index) => (
-            <Tower key={index} towerIndex={index} disks={tower} onDiskDrop={handleDiskDrop} />
-          ))}
-        </div>
+          <div className={styles.gameArea}>
+            {gameState.map((tower, index) => (
+              <Tower key={index} towerIndex={index} disks={tower} onDiskDrop={handleDiskDrop} />
+            ))}
+          </div>
 
-        <div className={styles.interface}>
-          <MovesCounter moves={moveCount} />
-          <GameControls onResetGame={handleResetGame} />
+          <div className={styles.interface}>
+            <MovesCounter moves={moveCount} />
+            <GameControls onResetGame={handleResetGame} />
+          </div>
         </div>
       </div>
     </DndProvider>
