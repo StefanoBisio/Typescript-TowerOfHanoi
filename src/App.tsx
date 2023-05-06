@@ -51,8 +51,8 @@ const App: React.FC = () => {
           <button className={styles.rulesButton} onClick={() => setShowRules(!showRules)}>Rules</button>
           {showRules && (
             <ul>
-              <li>Only one disk can be moved at a time.</li>
-              <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.</li>
+              <li>Only one disk can be moved at a time;</li>
+              <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod;</li>
               <li>No larger disk may be placed on top of a smaller disk.</li>
             </ul>
           )}
