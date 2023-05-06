@@ -16,8 +16,8 @@ export const Disk: React.FC<DiskProps> = ({ diskId, towerIndex }) => {
     }),
   }));
 
-  const diskWidth = 30 + diskId * 10;
-  const diskHeight = 10;
+  const diskWidth = 40 + diskId * 10;
+  const diskHeight = 20;
 
   return (
     <div
