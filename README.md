@@ -3,6 +3,8 @@
 
 This is a Tower of Hanoi game implemented in TypeScript using React and react-dnd.
 
+Hosted on Netlify: [Tower of Hanoi](https://polite-sundae-0663ef.netlify.app/)
+
 ## Overview
 
 The Tower of Hanoi is a mathematical puzzle consisting of three rods and a number of disks of different sizes, which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top. The objective of the puzzle is to move the entire stack to another rod, obeying the following simple rules:
