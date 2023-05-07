@@ -18,7 +18,6 @@ export const initGame = (numDisks: number): number[][] => {
   return initialState;
 };
 
-
 /* Moves a disk from one tower to another.
  * gameState is the current state of the game represented as a 2D array.
  * source is the index of the source tower.
@@ -65,14 +64,8 @@ export const moveDisk = (
 };
 
 export const isGameOver = (gameState: number[][]): boolean => {
-  // console.log(gameState[0].length);
-  // console.log(gameState[1].length);
-  // console.log(gameState[2].length);
 
   const numDisks = gameState[0].length + gameState[1].length + gameState[2].length;
-  
-  // const gameOver = gameState[1].length === numDisks || gameState[2].length === numDisks;
-  // console.log('isGameOver:', gameOver);
 
   return gameState[1].length === numDisks || gameState[2].length === numDisks;
 };

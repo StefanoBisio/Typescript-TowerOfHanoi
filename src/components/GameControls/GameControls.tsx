@@ -1,5 +1,3 @@
-// components/GameControls/GameControls.tsx
-
 import React, { useState } from 'react';
 import styles from './GameControls.module.css';
 
